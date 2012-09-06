@@ -67,16 +67,16 @@ namespace FeedBuilder
             this.chkDate = new System.Windows.Forms.CheckBox();
             this.chkSize = new System.Windows.Forms.CheckBox();
             this.chkVersion = new System.Windows.Forms.CheckBox();
+            this.txtBaseURL = new FeedBuilder.HelpfulTextBox();
             this.lblBaseURL = new System.Windows.Forms.Label();
             this.chkIgnoreVsHost = new System.Windows.Forms.CheckBox();
             this.chkIgnoreSymbols = new System.Windows.Forms.CheckBox();
             this.cmdFeedXML = new System.Windows.Forms.Button();
+            this.txtFeedXML = new FeedBuilder.HelpfulTextBox();
             this.lblFeedXML = new System.Windows.Forms.Label();
             this.cmdOutputFolder = new System.Windows.Forms.Button();
-            this.lblOutputFolder = new System.Windows.Forms.Label();
-            this.txtBaseURL = new FeedBuilder.HelpfulTextBox();
-            this.txtFeedXML = new FeedBuilder.HelpfulTextBox();
             this.txtOutputFolder = new FeedBuilder.HelpfulTextBox();
+            this.lblOutputFolder = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.ToolStripContainer1.ContentPanel.SuspendLayout();
@@ -418,6 +418,17 @@ namespace FeedBuilder
             this.chkVersion.Text = "Version";
             this.chkVersion.UseVisualStyleBackColor = true;
             // 
+            // txtBaseURL
+            // 
+            this.txtBaseURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBaseURL.HelpfulText = "Where you will upload the feed and update files for distribution to clients";
+            this.txtBaseURL.Location = new System.Drawing.Point(146, 86);
+            this.txtBaseURL.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
+            this.txtBaseURL.Name = "txtBaseURL";
+            this.txtBaseURL.Size = new System.Drawing.Size(387, 20);
+            this.txtBaseURL.TabIndex = 9;
+            // 
             // lblBaseURL
             // 
             this.lblBaseURL.AutoSize = true;
@@ -460,6 +471,19 @@ namespace FeedBuilder
             this.cmdFeedXML.TabIndex = 5;
             this.cmdFeedXML.Text = "...";
             this.cmdFeedXML.UseVisualStyleBackColor = true;
+            this.cmdFeedXML.Click += new System.EventHandler(this.cmdFeedXML_Click);
+            // 
+            // txtFeedXML
+            // 
+            this.txtFeedXML.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFeedXML.BackColor = System.Drawing.Color.White;
+            this.txtFeedXML.HelpfulText = "The file your application downloads to determine if there are updates";
+            this.txtFeedXML.Location = new System.Drawing.Point(146, 55);
+            this.txtFeedXML.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
+            this.txtFeedXML.Name = "txtFeedXML";
+            this.txtFeedXML.Size = new System.Drawing.Size(387, 20);
+            this.txtFeedXML.TabIndex = 4;
             // 
             // lblFeedXML
             // 
@@ -479,38 +503,7 @@ namespace FeedBuilder
             this.cmdOutputFolder.TabIndex = 2;
             this.cmdOutputFolder.Text = "...";
             this.cmdOutputFolder.UseVisualStyleBackColor = true;
-            // 
-            // lblOutputFolder
-            // 
-            this.lblOutputFolder.AutoSize = true;
-            this.lblOutputFolder.Location = new System.Drawing.Point(15, 27);
-            this.lblOutputFolder.Name = "lblOutputFolder";
-            this.lblOutputFolder.Size = new System.Drawing.Size(110, 13);
-            this.lblOutputFolder.TabIndex = 0;
-            this.lblOutputFolder.Text = "Project Output Folder:";
-            // 
-            // txtBaseURL
-            // 
-            this.txtBaseURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBaseURL.HelpfulText = "Where you will upload the feed and update files for distribution to clients";
-            this.txtBaseURL.Location = new System.Drawing.Point(146, 86);
-            this.txtBaseURL.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.txtBaseURL.Name = "txtBaseURL";
-            this.txtBaseURL.Size = new System.Drawing.Size(387, 20);
-            this.txtBaseURL.TabIndex = 9;
-            // 
-            // txtFeedXML
-            // 
-            this.txtFeedXML.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFeedXML.BackColor = System.Drawing.Color.White;
-            this.txtFeedXML.HelpfulText = "The file your application downloads to determine if there are updates";
-            this.txtFeedXML.Location = new System.Drawing.Point(146, 55);
-            this.txtFeedXML.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.txtFeedXML.Name = "txtFeedXML";
-            this.txtFeedXML.Size = new System.Drawing.Size(387, 20);
-            this.txtFeedXML.TabIndex = 4;
+            this.cmdOutputFolder.Click += new System.EventHandler(this.cmdOutputFolder_Click);
             // 
             // txtOutputFolder
             // 
@@ -523,6 +516,15 @@ namespace FeedBuilder
             this.txtOutputFolder.Name = "txtOutputFolder";
             this.txtOutputFolder.Size = new System.Drawing.Size(387, 20);
             this.txtOutputFolder.TabIndex = 1;
+            // 
+            // lblOutputFolder
+            // 
+            this.lblOutputFolder.AutoSize = true;
+            this.lblOutputFolder.Location = new System.Drawing.Point(15, 27);
+            this.lblOutputFolder.Name = "lblOutputFolder";
+            this.lblOutputFolder.Size = new System.Drawing.Size(110, 13);
+            this.lblOutputFolder.TabIndex = 0;
+            this.lblOutputFolder.Text = "Project Output Folder:";
             // 
             // frmMain
             // 
