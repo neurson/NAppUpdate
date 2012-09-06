@@ -91,6 +91,7 @@
     <Compile Include="Sources\UncSource.cs" />
     <Compile Include="Tasks\FileUpdateTask.cs" />
     <Compile Include="Tasks\IUpdateTask.cs" />
+    <Compile Include="Tasks\RegisterAssemblyTask.cs" />
     <Compile Include="Tasks\RegistryTask.cs" />
     <Compile Include="Tasks\UpdateTaskAliasAttribute.cs" />
     <Compile Include="Tasks\UpdateTaskBase.cs" />
