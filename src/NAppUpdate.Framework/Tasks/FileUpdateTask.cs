@@ -30,6 +30,8 @@ namespace NAppUpdate.Framework.Tasks
 
 		public override void Prepare(Sources.IUpdateSource source)
 		{
+		    Description = string.Format("Copy file: {0}", LocalPath);
+
 			if (string.IsNullOrEmpty(LocalPath))
 			{
 				UpdateManager.Instance.Logger.Log(Logger.SeverityLevel.Warning, "FileUpdateTask: LocalPath is empty, task is a noop");
