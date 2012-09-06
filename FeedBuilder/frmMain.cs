@@ -8,6 +8,8 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml;
+using My;
+
 namespace FeedBuilder
 {
 
