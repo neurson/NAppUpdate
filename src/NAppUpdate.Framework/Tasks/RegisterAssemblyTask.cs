@@ -64,8 +64,15 @@ namespace NAppUpdate.Framework.Tasks
                 if (p.ExitCode != 0)
                 {
                     ExecutionStatus = TaskExecutionStatus.Failed;
+
+                    UpdateManager.Instance.Logger.Log(Logger.SeverityLevel.Error, 
+                        string.Format("Could not register the assembly: {0}.", LocalPath));
+
                     throw new UpdateProcessFailedException("Could not register the assembly");
                 }
+
+                UpdateManager.Instance.Logger.Log(
+                    string.Format("Assembly registred successfuly: {0}.", LocalPath));
 
                 return ExecutionStatus = TaskExecutionStatus.Successful;
             }
@@ -73,6 +80,10 @@ namespace NAppUpdate.Framework.Tasks
             catch (Exception ex)
             {
                 ExecutionStatus = TaskExecutionStatus.Failed;
+
+                UpdateManager.Instance.Logger.Log(ex,
+                    string.Format("Could not register the assembly: {0}.", LocalPath));
+
                 throw new UpdateProcessFailedException("Could not register the assembly", ex);
             }
         }
@@ -83,6 +94,9 @@ namespace NAppUpdate.Framework.Tasks
             var arguments = string.Format("/unregister \"{0}\"", assemblyPath);
 
             Process.Start(_regasmPath, arguments);
+
+            UpdateManager.Instance.Logger.Log(
+                   string.Format("Rollback - assembly unregistred: {0}.", LocalPath));
 
             return true;
         }
